@@ -11,7 +11,7 @@ export MTK_ROOT_CUSTOM=../mediatek/custom
 export KBUILD_OUTPUT_SUPPORT=yes
 export ARCH=arm
 #export CROSS_COMPILE=/usr/bin/arm-linux-gnueabi-
-export CROSS_COMPILE=/home/benoitm/working/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.7/bin/arm-linux-androideabi-
+export CROSS_COMPILE=/home/banjo0917/prebuilt/linux-x86/bin/arm-linux-androideabi-
 
 
 kerneldir=`pwd`
@@ -50,7 +50,7 @@ while test -n "$1"; do
 	cd $mkbootpath
 	dd if=boot.img-kernel.img of=boot_head_512.img count=1
 	dd if=../kernel/$buildoutput/arch/arm/boot/zImage of=boot_head_512.img seek=1	
-	./repack-MT65xx.pl -boot boot_head_512.img boot.img-ramdisk monboot.img
+	./repack-MT65xx.pl -boot boot_head_512.img boot.img-ramdisk newboot.img
     esac
     shift
 done
